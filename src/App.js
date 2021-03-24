@@ -1,8 +1,13 @@
 import "./App.css";
-import LeagueList from "./LeagueList";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/pages/home/Home";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
 
 export default App;

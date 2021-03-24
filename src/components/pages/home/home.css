@@ -1,0 +1,45 @@
+.page {
+  background-image: url("../../../images/Bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  height: 100vh;
+}
+.page .navbar .navbar-nav {
+  margin-top: 39px;
+}
+.page .navbar .navbar-nav li {
+  margin: 0px 20px;
+}
+.page .navbar .navbar-nav li:last-child {
+  margin-right: 0px;
+}
+.page .navbar .navbar-nav li:last-child a {
+  background-color: #ff6e40;
+  padding: 12px 29px;
+  border-radius: 5px;
+  color: white;
+}
+.page .navbar .navbar-nav li a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2d2d2d;
+}
+.main-content {
+  margin-top: 248px;
+}
+.main-content .card {
+  border-radius: 10px;
+}
+.main-content .card img {
+  height: 115px;
+  width: 145px;
+  margin-top: 25px;
+}
+.main-content a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
