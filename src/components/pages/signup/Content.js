@@ -1,45 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 
 function Content() {
+  let { signup } = useAuth();
+
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
+  let [confirmPassword, setConfirmPassword] = useState("");
+  let [error, setError] = useState("");
+
+  async function submitHandler(e) {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError(`password didn't match.`);
+      return;
+    }
+
+    try {
+      setError("");
+      await signup(name, email, password);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch {
+      setError("Failed To create an account.");
+    }
+  }
+
   return (
     <div className="signup-form-content">
       <div className="row">
         <div className="col-lg-6 ml-auto mr-auto form-container">
           <h1 className="ml-18">Create an account </h1>
-          <form className="mr-auto ml-auto">
+          {error ? (
+            <div className="col-lg-11 ml-auto mr-auto">
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          <form className="mr-auto ml-auto" onSubmit={submitHandler}>
             <div className="form-group">
               <input
                 type="text"
                 className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
                 placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="form-group">
               <input
                 type="email"
                 className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
                 placeholder="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group">
               <input
                 type="password"
                 className="form-control"
-                id="exampleInputPassword1"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-group">
               <input
                 type="password"
                 className="form-control"
-                id="exampleInputPassword1"
                 placeholder="Confirm Password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
             <div className="form-check">

@@ -1,7 +1,9 @@
 import React from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import { NavLink } from "react-router-dom";
 
 function TopNav() {
+  let { currentUser } = useAuth();
   return (
     <>
       <div className="row">
@@ -32,11 +34,40 @@ function TopNav() {
                     Contact
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">
-                    Login
-                  </NavLink>
-                </li>
+
+                {currentUser ? (
+                  <>
+                    <li className="nav-item dropdown">
+                      <a
+                        className="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        My Profile
+                      </a>
+                      <div
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                      >
+                        <a className="dropdown-item" href="#">
+                          {currentUser.email}
+                        </a>
+                      </div>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/login">
+                        Login
+                      </NavLink>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </nav>

@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 
 function Content() {
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
+  let [error, setError] = useState("");
+  let { signin } = useAuth();
+
+  async function loginSubmitHandler(e) {
+    e.preventDefault();
+
+    try {
+      setError("");
+      await signin(email, password);
+    } catch (e) {
+      setError(e.message);
+    }
+  }
+
   return (
     <>
       <div className="form-content">
         <div className="row">
           <div className="col-lg-6 ml-auto mr-auto form-container">
             <h1 className="ml-18">Login</h1>
-            <form className="mr-auto ml-auto">
+            {error ? (
+              <div className="col-lg-11 ml-auto mr-auto">
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+            <form className="mr-auto ml-auto" onSubmit={loginSubmitHandler}>
               <div className="form-group">
                 <input
                   type="email"
@@ -16,6 +42,7 @@ function Content() {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -24,6 +51,7 @@ function Content() {
                   className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="form-check">

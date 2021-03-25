@@ -1,6 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function Content() {
+  let history = useHistory();
+  let searchResultHandler = (e) => {
+    e.preventDefault();
+    history.push({
+      pathname: "/search-result",
+    });
+  };
   return (
     <div className="search-form">
       <div className="container pl-0 pr-0">
@@ -27,7 +35,11 @@ function Content() {
                   placeholder="Dhanmondi"
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100">
+              <button
+                type="submit"
+                onClick={searchResultHandler}
+                className="btn btn-primary w-100"
+              >
                 Search
               </button>
             </form>
@@ -38,7 +50,7 @@ function Content() {
               width="100%"
               height="450"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
