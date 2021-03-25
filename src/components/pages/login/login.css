@@ -1,0 +1,143 @@
+.login-page .navbar .navbar-nav {
+  margin-top: 39px;
+}
+.login-page .navbar .navbar-nav li {
+  margin: 0px 20px;
+}
+.login-page .navbar .navbar-nav li:last-child {
+  margin-right: 0px;
+}
+.login-page .navbar .navbar-nav li:last-child a {
+  background-color: #ff6e40;
+  padding: 12px 29px;
+  border-radius: 5px;
+  color: white;
+}
+.login-page .navbar .navbar-nav li a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+.form-content {
+  margin-top: 100px;
+}
+.form-content h1 {
+  margin-left: 36px;
+  margin-top: 37px;
+  margin-bottom: 75px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.form-content form {
+  width: 461px;
+}
+.form-content form input::placeholder {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.form-content .form-container {
+  border: 2px solid #ababab;
+  border-radius: 4px;
+}
+.form-content .form-container .form-group {
+  margin-bottom: 24px;
+}
+.form-content .form-container .form-group input {
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-radius: 0px;
+}
+.form-content .form-container .form-group:first-child {
+  margin-bottom: 50px;
+}
+.form-content .form-container .form-check {
+  margin-bottom: 50px;
+}
+.form-content .form-container .btn {
+  margin-bottom: 16px;
+  background-color: #ff6e40;
+  border-radius: 0px;
+  border-color: white;
+}
+.form-content .form-container h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 38px;
+}
+.form-content .form-container h2 a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6e40;
+}
+.form-content .form-check label {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-content .form-check a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6e40;
+  margin-left: 176px;
+}
+.form-content .form-check input {
+  border-radius: 1px solid black;
+}
+.form-content .or-line .line {
+  border-bottom: 2px solid #c7c7c7;
+  width: 240px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.form-content .or-line {
+  margin-top: 22px;
+}
+.form-content .or-line .or {
+  margin: 0px 8px;
+}
+.form-content .or-line .or p {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-top: 3px;
+}
+.form-content .social {
+  margin-bottom: 9px;
+  border: 1px solid #c7c7c7;
+  padding: 7px 8px;
+  border-radius: 40px;
+}
+.form-content .facebook a i {
+  background-color: #3076ff;
+}
+.form-content .gmail a i {
+  background-color: #dd4b39;
+}
+.form-content a i {
+  background-color: black;
+  color: white;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 100%;
+}
+.form-content a span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-left: 112px;
+}
