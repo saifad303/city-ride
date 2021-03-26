@@ -6,7 +6,7 @@ function Content() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [error, setError] = useState("");
-  let { signin } = useAuth();
+  let { signin, currentUser } = useAuth();
 
   async function loginSubmitHandler(e) {
     e.preventDefault();

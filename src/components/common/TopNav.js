@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function TopNav() {
-  let { currentUser } = useAuth();
+  let { currentUser, signout } = useAuth();
+  let history = useHistory();
+  async function logoutHandler() {
+    try {
+      await signout();
+      history.push({
+        pathname: "/login",
+      });
+    } catch (e) {}
+  }
   return (
     <>
       <div className="row">
@@ -53,9 +63,18 @@ function TopNav() {
                         className="dropdown-menu"
                         aria-labelledby="navbarDropdown"
                       >
-                        <a className="dropdown-item" href="#">
+                        <span className="dropdown-item">
                           {currentUser.email}
-                        </a>
+                        </span>
+                        <span className="dropdown-item">
+                          <button
+                            type="button"
+                            onClick={logoutHandler}
+                            className="btn btn-success"
+                          >
+                            Logout
+                          </button>
+                        </span>
                       </div>
                     </li>
                   </>

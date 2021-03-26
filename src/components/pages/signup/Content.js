@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
 
 function Content() {
-  let { signup } = useAuth();
+  let { signup, currentUser } = useAuth();
 
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
@@ -89,7 +89,7 @@ function Content() {
               <a href="">Forget Password</a>
             </div>
             <button type="submit" className="btn btn-primary w-100">
-              Login
+              create
             </button>
           </form>
           <h2 className="text-center">
